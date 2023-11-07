@@ -1,13 +1,15 @@
 <script setup lang="ts">
-const { name, danger } = defineProps<{
+const { name, danger } = withDefaults(defineProps<{
   name: string;
-  danger: boolean;
-}>();
+  danger?: boolean;
+}>(), {
+  danger: false,
+});
 </script>
 
 <template>
   <button :class="{ danger: danger }">
-    <Icon :name="name" />
+    <Icon :name="name" size="1.25em" />
   </button>
 </template>
 

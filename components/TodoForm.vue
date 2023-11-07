@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+const emit = defineEmits<{
+  submit: [text: string]
+}>();
 
 const text = ref('');
 
 const submitForm = async () => {
-  console.log('submitting form', text.value);
+  emit('submit', text.value);
+  text.value = '';
 };
 </script>
 

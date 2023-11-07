@@ -6,7 +6,7 @@ export default defineEventHandler(async () => {
     return { todos };
   } catch (err) {
     throw createError({
-      statusCode: 400,
+      statusCode: 500,
       statusMessage: (err as Error).message
     });
   }
